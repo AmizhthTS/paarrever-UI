@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  scroll-margin-top: 100px !important;
+}
+html,
+body {
+  height: 100%;
+}
+/* body {
+  font-family: 'Poppins', sans-serif !important;
+  background: white;
+} */
+html:lang(ta) body {
+  font-family: 'Meera Inimai', sans-serif !important;
+  background: white;
+}
+
+html:lang(en) body {
+  font-family: 'Poppins', sans-serif !important;
+  background: white;
+}
+html:lang(en) h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+button,
+.MuiButton-root {
+  font-family: 'Poppins', sans-serif !important;
+}
+html:lang(ta) h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+button,
+.MuiButton-root {
+  font-family: 'Meera Inimai', sans-serif !important;
+}
+button,
+.MuiButton-root {
+  text-transform: capitalize !important;
+}
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(173, 29, 29, 1);
+  border-radius: 50px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.active-link {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  color: #0077ff;
+  border-radius: 5px;
+  border-left: 2px solid #0077ff;
+}
+.sub-active-link {
+  display: flex;
+  justify-content: space-between;
+  color: #0077ff;
+  border: 1px solid #0077ff;
+  background-color: white;
+  position: relative;
+  margin-bottom: 5px;
+}
+.sub-active-link::after {
+  position: absolute;
+  content: '';
+  top: -16px;
+  left: -21px;
+  width: 1px;
+  height: 37px;
+  background: #0077ff;
+}
+.sub-active-link::before {
+  position: absolute;
+  content: '';
+  top: 20px;
+  left: -21px;
+  width: 20px;
+  height: 1px;
+  background: #0077ff;
+}
+.sub-inactive-link {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: #ffffff8c;
+  margin-bottom: 5px;
+}
+.sub-inactive-link::after {
+  position: absolute;
+  content: '';
+  top: -16px;
+  left: -21px;
+  width: 1px;
+  height: 37px;
+  background: gainsboro;
+}
+.sub-inactive-link::before {
+  position: absolute;
+  content: '';
+  top: 20px;
+  left: -21px;
+  width: 20px;
+  height: 1px;
+  background: gainsboro;
+}
+.side-home-menu .MuiPaper-root.MuiPaper-elevation.MuiDrawer-paper {
+  background: #f9f5ff;
+  padding: 25px;
+  height: 97vh;
+  width: 250px;
+  overflow: auto;
+}
+.side-home-menue .MuiPaper-root.MuiPaper-elevation.MuiDrawer-paper {
+  background: white;
+  border-radius: 5px;
+  /* padding: 25px; */
+  height: 97vh;
+  width: auto;
+  overflow: auto;
+  margin: 25px;
+}
+
+.form_tag_lg {
+  width: 1000px !important;
+  background: white !important;
+  border-radius: 5px;
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.forget-modal {
+  width: 390px !important;
+  background: white !important;
+  border-radius: 5px;
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.register-modal {
+  width: 540px !important;
+  background: white !important;
+  border-radius: 5px;
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.connect-modal {
+  width: 590px !important;
+  background: white !important;
+  border-radius: 5px;
+  box-shadow:
+    0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.lag_select {
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  background: rgba(173, 29, 29, 1);
+  padding: 4px 6px;
+  font-variant: all-petite-caps;
+  font-size: 16px;
+  margin-bottom: 0px;
+  width: 70px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+  gap: 4px;
+}
+
+.hidden-checkbox {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.heading {
+  font-family: 'Boldonse', serif !important;
+}
+img.offerCss {
+  position: absolute;
+  right: 25%;
+  top: 0;
+}
+@media (max-width: 1024px) {
+  img.offerCss {
+    right: 5% !important;
+  }
+}
+@media (max-width: 575px) {
+  img.offerCss {
+    position: relative;
+  }
+}

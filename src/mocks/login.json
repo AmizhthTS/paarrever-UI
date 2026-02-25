@@ -1,0 +1,18 @@
+[
+  {
+    "type": "text",
+    "name": "email",
+    "textLable": "Username *",
+    "placeholderName": "Enter Your username",
+    "requiredMsg": "Username is required",
+    "labelMandatory": true
+  },
+  {
+    "type": "password",
+    "name": "password",
+    "textLable": "Password *",
+    "placeholderName": "Enter Password",
+    "requiredMsg": "Password is required",
+    "labelMandatory": true
+  }
+]

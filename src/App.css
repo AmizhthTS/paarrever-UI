@@ -1,0 +1,35 @@
+/* .active {
+  color: #ec180c !important;
+} */
+
+.timeline-container .mySwiper .swiper-wrapper {
+  justify-content: inherit !important;
+}
+/* .swiper-wrapper {
+  justify-content: center !important;
+} */
+
+@keyframes zoom {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+.logo {
+  /* font-family: 'Montserrat', 'Gotham', 'Arial', sans-serif; */
+  font-weight: 700; /* Bold weight */
+  letter-spacing: -1px; /* Slightly tighter letter spacing */
+  text-transform: uppercase;
+}
+
+.main-text {
+  color: #29abe2; /* Bright blue color for main text */
+}
+
+.accent {
+  color: #a3dcf6; /* Lighter blue for the accent/swoosh element */
+}

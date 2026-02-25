@@ -1,0 +1,342 @@
+{
+  "11": {
+    "data": "Please upload a file",
+    "type": "danger"
+  },
+  "12": {
+    "data": "Invalid file type: Please upload PNG, JPG, or JPEG",
+    "type": "danger"
+  },
+  "13": {
+    "data": "You can upload a maximum of 5 images",
+    "type": "danger"
+  },
+  "14": {
+    "data": "File exceeds the 5MB limit",
+    "type": "danger"
+  },
+  "15": {
+    "data": "Start Date cannot be after End Date",
+    "type": "danger"
+  },
+  "16": {
+    "data": "End Date cannot be before Start Date",
+    "type": "danger"
+  },
+  "17": {
+    "data": "End Time cannot be the same as or before Start Time on the same date",
+    "type": "danger"
+  },
+  "18": {
+    "data": "Please select a Valid Date",
+    "type": "danger"
+  },
+  "19": {
+    "data": "Saved Successfully",
+    "type": "success"
+  },
+  "99": {
+    "data": "Only 5 Attachments are allowed",
+    "type": "info"
+  },
+  "100": {
+    "data": "Please try again later",
+    "type": "danger"
+  },
+  "101": {
+    "data": "Please check the mandatory fields",
+    "type": "danger"
+  },
+  "102": {
+    "data": "Domin name already exists",
+    "type": "danger"
+  },
+  "103": {
+    "data": "Website name already exists",
+    "type": "danger"
+  },
+  "104": {
+    "data": "OTP resent successfully !!",
+    "type": "success"
+  },
+  "105": {
+    "data": "Invalid email address",
+    "type": "danger"
+  },
+  "106": {
+    "data": "Please upload a file smaller than 5 MB.",
+    "type": "danger"
+  },
+  "107": {
+    "data": "Please check your file format.",
+    "type": "danger"
+  },
+  "108": {
+    "data": "Updated Successfully",
+    "type": "success"
+  },
+  "109": {
+    "data": "Privacy & Disclaimers saved Successfully",
+    "type": "success"
+  },
+  "110": {
+    "data": "Thanks for contacting us! We’ll get back to you shortly.",
+    "type": "success"
+  },
+  "111": {
+    "data": "Removed Successfully",
+    "type": "success"
+  },
+  "1000": {
+    "data": "Invalid UserName or Password",
+    "type": "info"
+  },
+  "1001": {
+    "data": "Security Breach",
+    "type": "info"
+  },
+  "1002": {
+    "data": "Your Account is Locked, Please user forgot password to update password",
+    "type": "info"
+  },
+  "1003": {
+    "data": "Data Not Found",
+    "type": "info"
+  },
+  "1004": {
+    "data": "Invalid Email Template",
+    "type": "info"
+  },
+  "1005": {
+    "data": "Invalid Email SMTP Credentials",
+    "type": "info"
+  },
+  "1006": {
+    "data": "Invalid SMS Template",
+    "type": "info"
+  },
+  "1007": {
+    "data": "Invalid SMS Credentials",
+    "type": "info"
+  },
+  "1008": {
+    "data": "Invalid OTP",
+    "type": "info"
+  },
+  "1009": {
+    "data": "OTP Expired",
+    "type": "info"
+  },
+  "1010": {
+    "data": "Oops ! The Mobile Number is not registered with us.",
+    "type": "info"
+  },
+  "1011": {
+    "data": "Sorry ! Seems there is more traffic on the site, please try again in some time.",
+    "type": "info"
+  },
+  "1012": {
+    "data": "Seems the OTP is already used for login, please start the journey again",
+    "type": "info"
+  },
+  "1013": {
+    "data": "Template Not Found",
+    "type": "info"
+  },
+  "1014": {
+    "data": "Unable to Identify the type of login",
+    "type": "info"
+  },
+  "1015": {
+    "data": "Sorry ! Unable to reach google server at the moment, please login using OTP",
+    "type": "info"
+  },
+  "1016": {
+    "data": "Mobile Number not present in the google account",
+    "type": "info"
+  },
+  "1017": {
+    "data": "An Account with this mobile number already exists, please login using OTP",
+    "type": "info"
+  },
+  "1018": {
+    "data": "Invalid User ID",
+    "type": "info"
+  },
+  "1019": {
+    "data": "Invalid URL",
+    "type": "info"
+  },
+  "1020": {
+    "data": "Invalid JSON",
+    "type": "info"
+  },
+  "1021": {
+    "data": "Page Not Found",
+    "type": "info"
+  },
+  "1022": {
+    "data": "Invalid SiteID",
+    "type": "info"
+  },
+  "1023": {
+    "data": "Unable to upload the image, please try again later",
+    "type": "info"
+  },
+  "1024": {
+    "data": "Invalid Mode",
+    "type": "info"
+  },
+  "1025": {
+    "data": "Invalid Type",
+    "type": "info"
+  },
+  "1026": {
+    "data": "Invalid Recipient",
+    "type": "info"
+  },
+  "1027": {
+    "data": "Notification Template Empty",
+    "type": "info"
+  },
+  "1028": {
+    "data": "Business Name Already Exisits",
+    "type": "info"
+  },
+  "1029": {
+    "data": "Authentication Success",
+    "type": "success"
+  },
+  "1030": {
+    "data": "Invalid ID",
+    "type": "info"
+  },
+  "1031": {
+    "data": "Invalid Site ID",
+    "type": "info"
+  },
+  "1032": {
+    "data": "Invalid Period for the subscription",
+    "type": "info"
+  },
+  "1033": {
+    "data": "Invalid File Name",
+    "type": "info"
+  },
+  "1034": {
+    "data": "You are already registered with us. Please log in",
+    "type": "info"
+  },
+  "1037": {
+    "data": "Domain Name Already Exists",
+    "type": "info"
+  },
+  "1038": {
+    "data": "Domain Already Exists for the Site, Kindly Disable Existing to Change New Domain",
+    "type": "info"
+  },
+  "1039": {
+    "data": "Error in Creating Name Server, Kindly Contact Administrator for Immediate Resolution.",
+    "type": "info"
+  },
+  "1040": {
+    "data": "Invalid Domain Name Pattern",
+    "type": "info"
+  },
+  "1041": {
+    "data": "Error in Creating ACM Certificate, Kindly Contact Administrator for Immediate Resolution.",
+    "type": "info"
+  },
+  "1042": {
+    "data": "Certificate Creation not Completed, Kindly Contact Administrator for Immediate Resolution.",
+    "type": "info"
+  },
+  "1043": {
+    "data": "SSL Certificate Cration Under Process",
+    "type": "info"
+  },
+  "1044": {
+    "data": "Domain Validation Under Process",
+    "type": "info"
+  },
+  "1045": {
+    "data": "Domain Validatin Success. Your Site Creation Under Process",
+    "type": "info"
+  },
+  "1046": {
+    "data": "Almost There, Publishing your site on Internet",
+    "type": "info"
+  },
+  "1047": {
+    "data": "Let's Start your Personal Domain Creation",
+    "type": "info"
+  },
+  "1048": {
+    "data": "Invalid Status",
+    "type": "info"
+  },
+  "1049": {
+    "data": "Search String can-t be empty",
+    "type": "info"
+  },
+  "1050": {
+    "data": "Your credits are insufficient. Please upgrade your plan.",
+    "type": "info"
+  },
+  "1051": {
+    "data": "Kindly choose Target Language",
+    "type": "info"
+  },
+  "1052": {
+    "data": "Trial Expired",
+    "type": "info"
+  },
+  "1053": {
+    "data": "Unsupported period",
+    "type": "info"
+  },
+  "1056": {
+    "data": "This email ID is already subscribed.",
+    "type": "info"
+  },
+  "1057": {
+    "data": "Mobile Number Already Exist, Contact Administration",
+    "type": "info"
+  },
+  "1058": {
+    "data": "Maximum product limit reached",
+    "type": "info"
+  },
+  "1059": {
+    "data": "Oops! That email’s already connected to an account made with your phone. Just log in using your mobile number instead.",
+    "type": "info"
+  },
+  "1060": {
+    "data": "Oops! That mobile number’s already linked to an account you signed up with Google. Try logging in with your Google account instead.",
+    "type": "info"
+  },
+  "1061": {
+    "data": "Oops! That email’s already connected to an account. Just use different email instead.",
+    "type": "info"
+  },
+  "1062": {
+    "data": "Hellow Bar Already exist.",
+    "type": "info"
+  },
+  "1063": {
+    "data": "Sale price must be less than or equal to the MRP.",
+    "type": "info"
+  },
+  "1064": {
+    "data": "Invalid file: please upload a non-empty .txt file containing valid comma-separated email addresses.",
+    "type": "info"
+  },
+  "1065": {
+    "data": "Invalid Id.",
+    "type": "info"
+  },
+  "1066": {
+    "data": "Too many failed attempts. Please try again later.",
+    "type": "info"
+  }
+}

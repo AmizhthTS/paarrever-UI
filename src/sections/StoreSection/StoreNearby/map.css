@@ -1,0 +1,396 @@
+.echosys-second {
+  background-color: #01234b;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px 0px;
+  margin-top: -6px;
+}
+
+.map-bgfont {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.dis-users {
+  background: #0f0e30;
+  display: inline-block;
+  width: 70px;
+  font-size: 35px;
+  border-radius: 15px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.home-section-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hover-switch > img:last-of-type {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.hover-switch:hover > img:last-of-type {
+  opacity: 1;
+}
+
+.hover-switch.actMap > img:last-of-type {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.hover-switch.actMap > img:last-of-type {
+  opacity: 1;
+}
+
+.new-title {
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.dist-user {
+  position: relative;
+  z-index: 1;
+}
+
+.new-title {
+  font-size: 40px !important;
+  font-weight: bold !important;
+  padding-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+.map_section_dev {
+  position: relative;
+  left: -64px;
+  height: 765px;
+}
+
+img.Thiruvottiyur {
+  width: 193px;
+  position: absolute;
+  right: 125px;
+  top: 61px;
+  cursor: pointer;
+}
+
+img.Madhavaram {
+  width: 149px;
+  position: absolute;
+  right: 263px;
+  top: 143px;
+  cursor: pointer;
+}
+
+img.Mambalam {
+  width: 134px;
+  position: absolute;
+  right: 270px;
+  top: 379px;
+  cursor: pointer;
+}
+
+img.Perambur {
+  width: 78px;
+  position: absolute;
+  right: 235px;
+  top: 214px;
+  cursor: pointer;
+}
+
+img.Tondiarpet {
+  width: 79px;
+  position: absolute;
+  right: 166px;
+  top: 225px;
+  cursor: pointer;
+}
+
+img.Ambattur {
+  width: 130px;
+  position: absolute;
+  top: 230px;
+  right: 364px;
+  cursor: pointer;
+}
+
+img.Aminjikarai {
+  width: 100px;
+  position: absolute;
+  top: 251px;
+  right: 288px;
+  cursor: pointer;
+}
+
+img.Purasaiwakkam {
+  width: 124px;
+  position: absolute;
+  right: 178px;
+  top: 298px;
+  cursor: pointer;
+}
+
+img.Maduravoyal {
+  width: 167px;
+  position: absolute;
+  top: 294px;
+  right: 315px;
+  cursor: pointer;
+}
+
+img.Mylapore {
+  width: 96px;
+  position: absolute;
+  right: 205px;
+  top: 345px;
+  cursor: pointer;
+}
+
+img.Egmore {
+  width: 115px;
+  position: absolute;
+  top: 320px;
+  right: 243px;
+  cursor: pointer;
+}
+
+img.Alandur {
+  width: 126px;
+  position: absolute;
+  top: 443px;
+  right: 353px;
+  cursor: pointer;
+}
+
+img.Guindy {
+  width: 121px;
+  position: absolute;
+  top: 437px;
+  right: 259px;
+  cursor: pointer;
+}
+
+img.Velacherry {
+  width: 143px;
+  position: absolute;
+  right: 225px;
+  top: 475px;
+  cursor: pointer;
+}
+
+img.Sholinganallur {
+  width: 154px;
+  position: absolute;
+  top: 531px;
+  right: 243px;
+  cursor: pointer;
+}
+
+img.Thiruvottiyur2 {
+  width: 193px;
+  position: absolute;
+  right: 125px;
+  top: 61px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Madhavaram2 {
+  width: 149px;
+  position: absolute;
+  right: 263px;
+  top: 143px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Mambalam2 {
+  width: 134px;
+  position: absolute;
+  right: 270px;
+  top: 379px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Perambur2 {
+  width: 78px;
+  position: absolute;
+  right: 235px;
+  top: 214px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Tondiarpet2 {
+  width: 84px;
+  position: absolute;
+  right: 161px;
+  top: 225px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Ambattur2 {
+  width: 128px;
+  position: absolute;
+  top: 229px;
+  right: 367px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Aminjikarai2 {
+  width: 100px;
+  position: absolute;
+  top: 251px;
+  right: 288px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Purasaiwakkam2 {
+  width: 124px;
+  position: absolute;
+  right: 178px;
+  top: 298px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Maduravoyal2 {
+  width: 167px;
+  position: absolute;
+  top: 294px;
+  right: 315px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Mylapore2 {
+  width: 96px;
+  position: absolute;
+  right: 205px;
+  top: 345px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Egmore2 {
+  width: 115px;
+  position: absolute;
+  top: 320px;
+  right: 243px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Alandur2 {
+  width: 126px;
+  position: absolute;
+  top: 443px;
+  right: 353px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Guindy2 {
+  width: 121px;
+  position: absolute;
+  top: 437px;
+  right: 259px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Velacherry2 {
+  width: 143px;
+  position: absolute;
+  right: 225px;
+  top: 475px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img.Sholinganallur2 {
+  width: 154px;
+  position: absolute;
+  top: 531px;
+  right: 243px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.disabled-map {
+  opacity: 0.55;
+  transition: none !important;
+}
+
+.disabled-map:hover {
+  transform: none !important;
+  filter: none !important;
+  opacity: 0.55 !important;
+}
+
+/* 🚫 Disable hover map-switch for districts with NO stores */
+.no-hover.hover-switch:hover > img:last-of-type {
+  opacity: 0 !important; /* keep yellow image hidden */
+}
+
+.no-hover.hover-switch > img:last-of-type {
+  opacity: 0 !important; /* never show yellow map */
+}
+
+.no-hover img {
+  cursor: not-allowed !important; /* no hover cursor */
+}
+
+@media (max-width: 1024px) {
+  .map-bg {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .map_section_dev {
+    position: relative;
+    left: -300px;
+    height: 670px;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  .map_section_dev {
+    position: relative;
+    left: -145px;
+    height: 670px;
+  }
+}
+@media (max-width: 575px) {
+  .map_section_dev {
+    position: relative;
+    left: 312px;
+    width: 50%;
+  }
+
+  .map_div {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: overlay;
+    height: 800px;
+  }
+}

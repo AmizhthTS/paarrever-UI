@@ -1,0 +1,94 @@
+{
+  "navbar": {
+    "home": "Home",
+    "categories": "Categories",
+    "storeLocator": "Store Locator",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title1": "Convenience at your doorstep",
+    "title2": "From Rasam to Refill – We’ve got it all!",
+    "title3": "Where your cart finds happiness",
+    "subtitle1": "Anna, everything ready-aa? Yes boss!",
+    "subtitle2": "Your Amma's checklist lives here!",
+    "subtitle3": "Convenience meets quality",
+    "description1": "Your one-stop store for groceries, snacks, and daily essentials — always at the right price",
+    "description2": "Whether it’s the missing mustard seeds or your favorite detergent, your local PAARR Ever store has you covered",
+    "description3": "From your favorite biscuits to home must-haves, we make shopping simple, fun, and affordable.",
+    "cta1": "Explore Categories",
+    "cta2": "Explore Categories",
+    "cta3": "Explore Categories",
+    "learnMore": "Learn More"
+  },
+  "category": {
+    "title": "Categories",
+    "subtitle": "You name it, we have it",
+    "available": "Available at Your Nearest PAARR Store",
+    "subavailable": "All products shown are available at our physical stores across Chennai and Tamil Nadu. Use our store locator to find the nearest PAARR store to you."
+  },
+  "shop": {
+    "title": "Shop by Category",
+    "subtitle": "Step into a world of categories that feel just like home"
+  },
+  "community": {
+    "head": "Community Impact",
+    "subHead": "Our commitment to Tamil Nadu goes beyond just business",
+    "title1": "SKUs",
+    "title2": "Categories",
+    "title3": "Store Locations",
+    "subTitle1": "Direct partnerships providing fair prices and sustainable livelihoods",
+    "subTitle2": "Shop 16+ trusted categories for your everyday needs",
+    "subTitle3": "Serving communities across Chennai and Tamil Nadu"
+  },
+  "product": {},
+  "storeLocator": {
+    "title": "Store Locator",
+    "subtitle": "There is always a PAARR Ever near you, with convenience, quality, and irresistible range",
+    "specialTitle": "What makes PAARR ever special?",
+    "convenience": "Convenience",
+    "assortment": "Assortment",
+    "shoppingExperience": "Shopping Experience",
+    "envisioned": "Envisioned for your neighborhood",
+    "range": "Range that makes you fall in love",
+    "place": "A place that feels just like home"
+  },
+  "about": {
+    "title": "About PAARR ever",
+    "subtitle": "More than just a supermarket, we are your neighborhood’s trusted shopping companion. At PAARR ever, we believe that shopping for grocery & daily essential should be simple, joyful, and rewarding. With carefully chosen products, fair prices, and an inviting shopping experience, we are here to make your everyday easier.",
+    "subtitle1": "",
+    "missionTitle": "Our Mission",
+    "missionSubTitle": "To bring everyday essentials and quality products closer to our communities through conveniently located, customer-friendly neighborhood stores that prioritize good shopping experience, embrace technology, and deliver affordability.",
+    "visionTitle": "Our Vision",
+    "visionSubTitle": "To become the most trusted and preferred neighborhood supermarket chain with clean, well-organized, and tech-enabled stores that bring freshness, local value, and convenience to most corners of the city.",
+    "envisioned": "Envisioned for your neighborhood",
+    "range": "Range that makes you fall in love",
+    "place": "A place that feels just like home"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subTitle": "Have questions, feedback, or need assistance? We re here to help you with all your PAARR needs"
+  },
+  "footer": {
+    "titleConnected": "Stay Connected",
+    "subTitleConnected": "Get the latest offers, and stories from South India delivered to your inbox",
+    "logoTitle": "Your trusted neighborhood grocery store, bringing authentic South Indian flavors and everyday essentials to Chennai and beyond."
+  },
+  "districts": {
+    "Thiruvottiyur": "Thiruvottiyur",
+    "Madhavaram": "Madhavaram",
+    "Perambur": "Perambur",
+    "Tondiarpet": "Tondiarpet",
+    "Ambattur": "Ambattur",
+    "Aminjikarai": "Aminjikarai",
+    "Purasaiwakkam": "Purasaiwakkam",
+    "Egmore": "Egmore",
+    "Maduravoyal": "Maduravoyal",
+    "Mambalam": "Mambalam",
+    "Mylapore": "Mylapore",
+    "Alandur": "Alandur",
+    "Guindy": "Guindy",
+    "Velacherry": "Velachery",
+    "Sholinganallur": "Sholinganallur"
+  }
+}
