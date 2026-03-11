@@ -55,6 +55,7 @@ import Banner6 from './images/Banner-6.jpg';
 import Banner7 from './images/Banner-7.jpg';
 import Banner8 from './images/Banner-8.jpg';
 import LandingpageBanner from './images/LandingpageBanner.jpeg';
+import TC from './pdf/General T&C and Privacy Policy.pdf';
 export {
   Loading_Animation,
   fileupload,
@@ -111,5 +112,6 @@ export {
   Banner6,
   Banner7,
   Banner8,
-  LandingpageBanner
+  LandingpageBanner,
+  TC
 };

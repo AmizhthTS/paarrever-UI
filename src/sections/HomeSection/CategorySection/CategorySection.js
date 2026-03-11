@@ -67,43 +67,50 @@ const CategorySection = () => {
       icon: WheatIcon,
       title: 'Packaged food',
       subtitle: 'Baking needs, Jams & Honey',
-      gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'
+      gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: ChefHatIcon,
       title: 'Snacking & Sweets',
       subtitle: 'Biscuits, Chips & Nachos',
-      gradient: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)'
+      gradient: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: GiftIcon,
       title: 'Daily essentials',
       subtitle: 'Dry fruits & Nuts, Sugar',
-      gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)'
+      gradient: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: CoffeeIcon,
       title: 'Dairy',
       subtitle: 'Milk, Curd, Paneer',
-      gradient: 'linear-gradient(135deg, #d97706 0%, #2563eb 100%)'
+      gradient: 'linear-gradient(135deg, #d97706 0%, #2563eb 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: ImportContactsIcon,
       title: 'Stationery',
       subtitle: 'School supplies',
-      gradient: 'linear-gradient(135deg, #059669 0%, #10b981 100%)'
+      gradient: 'linear-gradient(135deg, #059669 0%, #10b981 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: ChildCareIcon,
       title: 'Baby care',
       subtitle: 'Baby accessories',
-      gradient: 'linear-gradient(135deg, #1d4ed8 0%, #10b981 100%)'
+      gradient: 'linear-gradient(135deg, #1d4ed8 0%, #10b981 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: PetsIcon,
       title: 'Pet Care',
       subtitle: 'Pet accessories',
-      gradient: 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)'
+      gradient: 'linear-gradient(135deg, #6b7280 0%, #4b5563 100%)',
+      clickCategory: '/categories'
     },
     {
       icon: PackageIcon,

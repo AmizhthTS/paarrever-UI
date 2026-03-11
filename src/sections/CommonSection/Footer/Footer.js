@@ -13,7 +13,8 @@ import {
   Instagram,
   Phone as PhoneIcon,
   Mail as MailIcon,
-  LocationOn as MapPinIcon
+  LocationOn as MapPinIcon,
+  Close as CloseIcon
   // Favorite as HeartIcon
 } from '@mui/icons-material';
 import { getStyles } from './styles';
@@ -21,7 +22,7 @@ import { Link, useLocation } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
-import { newMainLogo, successImg } from '../../../assets';
+import { newMainLogo, successImg, TC } from '../../../assets';
 import MuiButton from '../../../components/Button/Button';
 import { TextInput } from '../../../components';
 import { useForm } from 'react-hook-form';
@@ -38,6 +39,7 @@ const Footer = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [newsletterOpen, setNewsletterOpen] = useState(false);
+  const [pdfOpen, setPdfOpen] = useState(false);
   const [store, setStore] = useState([]);
   const storeData = useSelector((state) => state?.store ?? null);
   const storeListResponse = storeData?.storeList ?? null;
@@ -115,6 +117,15 @@ const Footer = () => {
     setNewsletterOpen(false);
   };
 
+  const handlePdfOpen = (e) => {
+    e.preventDefault();
+    setPdfOpen(true);
+  };
+
+  const handlePdfClose = () => {
+    setPdfOpen(false);
+  };
+
   const footerSections = [
     {
       title: 'Quick links',
@@ -133,7 +144,7 @@ const Footer = () => {
       title: 'Legal & Policies',
       links: [
         { label: 'Privacy policy', path: '/' },
-        { label: 'Terms & Conditions', path: '/' }
+        { label: 'Terms of Privacy', path: '/' }
       ]
     }
   ];
@@ -237,9 +248,23 @@ const Footer = () => {
                 <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                   {section.links.map((link, linkIndex) => (
                     <Box component="li" key={linkIndex} sx={{ mb: 1 }}>
-                      <Link to={link.path} style={styles.footerLink}>
-                        {link.label}
-                      </Link>
+                      {link.label === 'Privacy policy' ||
+                      link.label === 'Terms of Privacy' ||
+                      link.label === 'Terms & Conditions' ? (
+                        <Typography
+                          component="a"
+                          href="#"
+                          onClick={handlePdfOpen}
+                          style={styles.footerLink}
+                          sx={{ textDecoration: 'none', cursor: 'pointer' }}
+                        >
+                          {link.label}
+                        </Typography>
+                      ) : (
+                        <Link to={link.path} style={styles.footerLink}>
+                          {link.label}
+                        </Link>
+                      )}
                     </Box>
                   ))}
                 </Box>
@@ -297,29 +322,37 @@ const Footer = () => {
           </Grid>
           <Divider sx={styles.separator} />
           {/* <Box sx={styles.bottomBar}>
-          <Box sx={styles.legalLinks}>
-            <Link to="/" style={styles.legalLink}>
-              Privacy Policy
-            </Link>
-            <Link to="/" style={styles.legalLink}>
-              Terms of Service
-            </Link>
-            <Link to="/" style={styles.legalLink}>
-              Cookie Policy
-            </Link>
-            <Link to="/" style={styles.legalLink}>
-              Accessibility
-            </Link>
-          </Box>
+            <Box sx={styles.legalLinks}>
+              <Typography
+                component="a"
+                href="#"
+                onClick={handlePdfOpen}
+                style={styles.legalLink}
+              >
+                Privacy Policy
+              </Typography>
+              <Typography
+                component="a"
+                href="#"
+                onClick={handlePdfOpen}
+                style={styles.legalLink}
+              >
+                Terms of Privacy
+              </Typography>
+              <Link to="/" style={styles.legalLink}>
+                Cookie Policy
+              </Link>
+              <Link to="/" style={styles.legalLink}>
+                Accessibility
+              </Link>
+            </Box>
+           
+          </Box> */}
           <Box sx={styles.madeWithLove}>
-            <span>Made with</span>
-            <HeartIcon sx={styles.heartIcon} />
-            <span>in Chennai</span>
+            <Typography sx={styles.copyright}>
+              © 2025 PAARR ever. All rights reserved.
+            </Typography>
           </Box>
-        </Box> */}
-          <Typography sx={styles.copyright}>
-            © 2025 PAARR ever. All rights reserved.
-          </Typography>
         </Container>
       </Box>
       <Dialog
@@ -346,6 +379,34 @@ const Footer = () => {
             </Typography>
           </Grid>
         </DialogContent>
+      </Dialog>
+      <Dialog open={pdfOpen} onClose={handlePdfClose} fullScreen>
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              p: 1,
+              backgroundColor: '#fff'
+            }}
+          >
+            <Typography variant="h6">
+              Privacy Policy & Terms of Privacy
+            </Typography>
+            <IconButton onClick={handlePdfClose} aria-label="close">
+              <CloseIcon />
+            </IconButton>
+          </Box>
+          <Box sx={{ flexGrow: 1, overflow: 'hidden' }}>
+            <iframe
+              src={`${TC}#toolbar=0`}
+              title="Terms & Conditions and Privacy Policy"
+              width="100%"
+              height="100%"
+              style={{ border: 'none' }}
+            />
+          </Box>
+        </Box>
       </Dialog>
     </>
   );

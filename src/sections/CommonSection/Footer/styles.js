@@ -164,6 +164,7 @@ export const getStyles = () => {
     },
     madeWithLove: {
       display: 'flex',
+      justifyContent: 'center',
       alignItems: 'center',
       gap: 1,
       fontSize: '0.875rem',
