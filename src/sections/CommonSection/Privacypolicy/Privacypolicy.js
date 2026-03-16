@@ -140,22 +140,27 @@ const Privacypolicy = () => {
                 <List sx={styles.list}>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Order Fulfilment:</strong> To manage your purchases, payments, and deliveries.
+                      <strong>Order Fulfilment:</strong> To manage your
+                      purchases, payments, and deliveries.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Communication:</strong> To send you administrative updates, marketing promotions (with your consent), and respond to your inquiries.
+                      <strong>Communication:</strong> To send you administrative
+                      updates, marketing promotions (with your consent), and
+                      respond to your inquiries.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Improvement:</strong> To analyse usage trends and improve our product offerings.
+                      <strong>Improvement:</strong> To analyse usage trends and
+                      improve our product offerings.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Security:</strong> To protect our customers and platform from fraud or unauthorized activity.
+                      <strong>Security:</strong> To protect our customers and
+                      platform from fraud or unauthorized activity.
                     </Typography>
                   </ListItem>
                 </List>

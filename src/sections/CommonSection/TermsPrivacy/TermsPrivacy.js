@@ -140,7 +140,8 @@ const TermsPrivacy = () => {
                 <List sx={styles.list}>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Order Fulfilment:</strong> To manage your purchases, payments, and deliveries.
+                      <strong>Order Fulfilment:</strong> To manage your
+                      purchases, payments, and deliveries.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
