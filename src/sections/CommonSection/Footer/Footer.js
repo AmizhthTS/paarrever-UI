@@ -13,8 +13,7 @@ import {
   Instagram,
   Phone as PhoneIcon,
   Mail as MailIcon,
-  LocationOn as MapPinIcon,
-  Close as CloseIcon
+  LocationOn as MapPinIcon
   // Favorite as HeartIcon
 } from '@mui/icons-material';
 import { getStyles } from './styles';
@@ -22,7 +21,7 @@ import { Link, useLocation } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
-import { newMainLogo, successImg, TC } from '../../../assets';
+import { newMainLogo, successImg } from '../../../assets';
 import MuiButton from '../../../components/Button/Button';
 import { TextInput } from '../../../components';
 import { useForm } from 'react-hook-form';
@@ -39,7 +38,6 @@ const Footer = () => {
   const { t } = useTranslation();
   const location = useLocation();
   const [newsletterOpen, setNewsletterOpen] = useState(false);
-  const [pdfOpen, setPdfOpen] = useState(false);
   const [store, setStore] = useState([]);
   const storeData = useSelector((state) => state?.store ?? null);
   const storeListResponse = storeData?.storeList ?? null;
@@ -117,15 +115,6 @@ const Footer = () => {
     setNewsletterOpen(false);
   };
 
-  const handlePdfOpen = (e) => {
-    e.preventDefault();
-    setPdfOpen(true);
-  };
-
-  const handlePdfClose = () => {
-    setPdfOpen(false);
-  };
-
   const footerSections = [
     {
       title: 'Quick links',
@@ -143,8 +132,8 @@ const Footer = () => {
     {
       title: 'Legal & Policies',
       links: [
-        { label: 'Privacy policy', path: '/' },
-        { label: 'Terms of Privacy', path: '/' }
+        { label: 'Privacy policy', path: '/privacy-policy' },
+        { label: 'Terms of Privacy', path: '/terms-privacy' }
       ]
     }
   ];
@@ -248,23 +237,9 @@ const Footer = () => {
                 <Box component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
                   {section.links.map((link, linkIndex) => (
                     <Box component="li" key={linkIndex} sx={{ mb: 1 }}>
-                      {link.label === 'Privacy policy' ||
-                      link.label === 'Terms of Privacy' ||
-                      link.label === 'Terms & Conditions' ? (
-                        <Typography
-                          component="a"
-                          href="#"
-                          onClick={handlePdfOpen}
-                          style={styles.footerLink}
-                          sx={{ textDecoration: 'none', cursor: 'pointer' }}
-                        >
-                          {link.label}
-                        </Typography>
-                      ) : (
-                        <Link to={link.path} style={styles.footerLink}>
-                          {link.label}
-                        </Link>
-                      )}
+                      <Link to={link.path} style={styles.footerLink}>
+                        {link.label}
+                      </Link>
                     </Box>
                   ))}
                 </Box>
@@ -379,34 +354,6 @@ const Footer = () => {
             </Typography>
           </Grid>
         </DialogContent>
-      </Dialog>
-      <Dialog open={pdfOpen} onClose={handlePdfClose} fullScreen>
-        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              p: 1,
-              backgroundColor: '#fff'
-            }}
-          >
-            <Typography variant="h6">
-              Privacy Policy & Terms of Privacy
-            </Typography>
-            <IconButton onClick={handlePdfClose} aria-label="close">
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <Box sx={{ flexGrow: 1, overflow: 'hidden' }}>
-            <iframe
-              src={`${TC}#toolbar=0`}
-              title="Terms & Conditions and Privacy Policy"
-              width="100%"
-              height="100%"
-              style={{ border: 'none' }}
-            />
-          </Box>
-        </Box>
       </Dialog>
     </>
   );
