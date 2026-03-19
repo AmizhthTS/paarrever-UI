@@ -133,7 +133,7 @@ const Footer = () => {
       title: 'Legal & Policies',
       links: [
         { label: 'Privacy policy', path: '/privacy-policy' },
-        { label: 'Terms of Privacy', path: '/terms-privacy' }
+        { label: 'Terms & Conditions', path: '/terms-conditions' }
       ]
     }
   ];

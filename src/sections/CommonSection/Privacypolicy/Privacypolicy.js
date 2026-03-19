@@ -44,10 +44,10 @@ const Privacypolicy = () => {
       <Container maxWidth="lg">
         <Box sx={styles.heroSection} data-aos="fade-up">
           <Typography variant="h1" sx={styles.title}>
-            Privacy Policy
+            Privacy Policy & Terms of Privacy
           </Typography>
           <Typography sx={styles.lastUpdated}>
-            Last Updated: 10th March 2026
+            Last Updated: 17th March 2026
           </Typography>
         </Box>
 
@@ -99,29 +99,29 @@ const Privacypolicy = () => {
                 <List sx={styles.list}>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Voluntary Information:</strong> This includes your
-                      name, email address, phone number, and delivery address
-                      provided during registration or checkout.
+                      ● <strong>Voluntary Information:</strong> This includes
+                      your name, email address, phone number, and delivery
+                      address provided during registration or checkout.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Payment Data:</strong> We collect only necessary
+                      ● <strong>Payment Data:</strong> We collect only necessary
                       data to process your payments. Most payment information is
                       managed securely by our third-party payment gateways.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Automated Information:</strong> When you visit our
-                      site or app, we may automatically collect your IP address,
-                      browser type, and device characteristics for security and
-                      analytics.
+                      ● <strong>Automated Information:</strong> When you visit
+                      our site or app, we may automatically collect your IP
+                      address, browser type, and device characteristics for
+                      security and analytics.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>App Permissions:</strong> If you use our mobile
+                      ● <strong>App Permissions:</strong> If you use our mobile
                       app, we may request access to your location, camera, or
                       push notifications to provide specific services, such as
                       finding the nearest store.
@@ -140,26 +140,26 @@ const Privacypolicy = () => {
                 <List sx={styles.list}>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Order Fulfilment:</strong> To manage your
+                      ● <strong>Order Fulfilment:</strong> To manage your
                       purchases, payments, and deliveries.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Communication:</strong> To send you administrative
-                      updates, marketing promotions (with your consent), and
-                      respond to your inquiries.
+                      ● <strong>Communication:</strong> To send you
+                      administrative updates, marketing promotions (with your
+                      consent), and respond to your inquiries.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Improvement:</strong> To analyse usage trends and
-                      improve our product offerings.
+                      ● <strong>Improvement:</strong> To analyse usage trends
+                      and improve our product offerings.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Security:</strong> To protect our customers and
+                      ● <strong>Security:</strong> To protect our customers and
                       platform from fraud or unauthorized activity.
                     </Typography>
                   </ListItem>
@@ -178,20 +178,21 @@ const Privacypolicy = () => {
                 <List sx={styles.list}>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Service Providers:</strong> With trusted partners
-                      (like delivery couriers or payment processors) who help us
-                      operate our business.
+                      ● <strong>Service Providers:</strong> With trusted
+                      partners (like delivery couriers or payment processors)
+                      who help us operate our business.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Legal Requirements:</strong> When required by law,
-                      such as responding to a court order or government request.
+                      ● <strong>Legal Requirements:</strong> When required by
+                      law, such as responding to a court order or government
+                      request.
                     </Typography>
                   </ListItem>
                   <ListItem sx={styles.listItem}>
                     <Typography sx={styles.text}>
-                      <strong>Business Transfers:</strong> In the event of a
+                      ● <strong>Business Transfers:</strong> In the event of a
                       merger, sale, or acquisition of our company.
                     </Typography>
                   </ListItem>
@@ -243,15 +244,15 @@ const Privacypolicy = () => {
                   your information, please contact us at:
                 </Typography>
                 <Box sx={styles.contactBox}>
-                  <Typography sx={{ fontWeight: 600, mb: 1 }}>
-                    Email Support
+                  <Typography sx={{ mb: 1 }}>
+                    ● <strong>Email:</strong>{' '}
+                    <Link
+                      href="mailto:care@paarrever.com"
+                      sx={styles.contactLink}
+                    >
+                      care@paarrever.com
+                    </Link>
                   </Typography>
-                  <Link
-                    href="mailto:care@paarrever.com"
-                    sx={styles.contactLink}
-                  >
-                    care@paarrever.com
-                  </Link>
                 </Box>
               </Box>
             </Box>

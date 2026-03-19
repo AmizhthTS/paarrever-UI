@@ -16,7 +16,7 @@ import {
 } from '../pages';
 import AuthRoute from './AuthRoute';
 import AdminRoute from './AdminRoute';
-import { Privacypolicy, TermsPrivacy } from '../sections';
+import { Privacypolicy, TermsConditions } from '../sections';
 const RouteConfig = () => {
   const isLoading = useSelector((state) => state?.loader?.isLoading ?? false);
   const notificationResp = useSelector(
@@ -39,7 +39,7 @@ const RouteConfig = () => {
           <Route path="paarr-passport" element={<PaarPassportPage />} />
           <Route path="newsletter/unsubscribe" element={<UnSusbcribe />} />
           <Route path="privacy-policy" element={<Privacypolicy />} />
-          <Route path="terms-privacy" element={<TermsPrivacy />} />
+          <Route path="terms-conditions" element={<TermsConditions />} />
           <Route path="404" element={<PageNotFound />} />
           <Route path="under-maintenance" element={<UnderMaintenance />} />
           <Route path="sesstion-timeout" element={<SesstionTimeout />} />

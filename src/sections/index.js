@@ -1,4 +1,9 @@
-import { Navbar, Footer, Privacypolicy, TermsPrivacy } from './CommonSection';
+import {
+  Navbar,
+  Footer,
+  Privacypolicy,
+  TermsConditions
+} from './CommonSection';
 import { BannerSection, CategorySection } from './HomeSection';
 import ProductSection from './ProductSection';
 import { ContactBanner, ContactMessage, ContactHelp } from './ContactSection';
@@ -33,7 +38,7 @@ export {
   Navbar,
   Footer,
   Privacypolicy,
-  TermsPrivacy,
+  TermsConditions,
   BannerSection,
   CategorySection,
   ProductSection,

@@ -33,10 +33,6 @@ export const getStyles = () => ({
     borderRadius: '16px',
     display: { xs: 'none', md: 'block' }
   },
-  mobileNav: {
-    display: { xs: 'block', md: 'none' },
-    marginBottom: '32px'
-  },
   navItem: {
     padding: '12px 16px',
     cursor: 'pointer',
@@ -77,13 +73,14 @@ export const getStyles = () => ({
     color: '#444',
     lineHeight: 1.8,
     fontSize: '1rem'
+    // marginBottom: '16px'
   },
   list: {
     paddingLeft: '24px',
     marginBottom: '10px'
   },
   listItem: {
-    marginBottom: '5px',
+    marginBottom: '10px',
     color: '#444',
     position: 'relative',
     '&::marker': {
