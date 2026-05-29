@@ -6,6 +6,8 @@ import {
   Chip,
   Container,
   Grid,
+  // IconButton,
+  // Tooltip,
   Typography
 } from '@mui/material';
 import { useEffect, useState } from 'react';
@@ -14,7 +16,8 @@ import {
   Phone as PhoneIcon,
   AccessTime as AccessTimeIcon,
   Directions as DirectionsIcon,
-  Store as StoreIcon
+  Store as StoreIcon,
+  WhatsApp as WhatsAppIcon
 } from '@mui/icons-material';
 import getStyles from './styles';
 import Aos from 'aos';
@@ -60,6 +63,20 @@ const StoreLocaterList = () => {
   }, [storeListResponse]);
 
   const handleReDirectClick = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleWhatsAppClick = (contactNumber) => {
+    if (!contactNumber) return;
+    const parts = contactNumber.split(/[/,]/);
+    const targetNumber = parts[0].trim();
+    let cleanNumber = targetNumber.replace(/\D/g, '');
+    if (cleanNumber.length === 10) {
+      cleanNumber = '91' + cleanNumber;
+    } else if (cleanNumber.length === 11 && cleanNumber.startsWith('0')) {
+      cleanNumber = '91' + cleanNumber.substring(1);
+    }
+    const url = `https://api.whatsapp.com/send?phone=${cleanNumber}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -134,11 +151,35 @@ const StoreLocaterList = () => {
                             {store.address}
                           </Typography>
                         </Box>
-                        <Box sx={styles.storeDetail}>
+                        <Box
+                          sx={{ ...styles.storeDetail, alignItems: 'center' }}
+                        >
                           <PhoneIcon fontSize="small" color="action" />
                           <Typography variant="body2">
                             {store.contactNumber}
                           </Typography>
+                          {/* {store.contactNumber && (
+                            <Tooltip title="Chat on WhatsApp" arrow>
+                              <IconButton
+                                size="small"
+                                onClick={() =>
+                                  handleWhatsAppClick(store.contactNumber)
+                                }
+                                sx={{
+                                  color: '#25D366',
+                                  p: 0,
+                                  ml: 1,
+                                  '&:hover': {
+                                    color: '#20ba5a',
+                                    transform: 'scale(1.15)'
+                                  },
+                                  transition: 'transform 0.2s, color 0.2s'
+                                }}
+                              >
+                                <WhatsAppIcon fontSize="small" />
+                              </IconButton>
+                            </Tooltip>
+                          )} */}
                         </Box>
                         <Box sx={styles.storeDetail}>
                           <AccessTimeIcon fontSize="small" color="action" />
@@ -146,6 +187,16 @@ const StoreLocaterList = () => {
                         </Box>
                       </Box>
                       <Box sx={styles.storeActions}>
+                        <Button
+                          sx={styles.storeWhatsapp}
+                          fullWidth
+                          startIcon={<WhatsAppIcon />}
+                          onClick={() =>
+                            handleWhatsAppClick(store.contactNumber)
+                          }
+                        >
+                          Message us
+                        </Button>
                         <Button
                           sx={styles.storeDirect}
                           fullWidth

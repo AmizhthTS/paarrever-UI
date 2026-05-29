@@ -153,13 +153,13 @@ const getStyles = () => {
         background: 'rgba(173, 29, 29, 1)'
       }
     },
-    storeCall: {
-      border: '1px solid',
-      borderColor: 'grey.300',
+    storeWhatsapp: {
+      background: '#25D366',
+      color: 'white',
       padding: '6px 18px',
       borderRadius: '6px',
       '&:hover': {
-        background: 'rgba(173, 29, 29, 1)',
+        background: '#20ba5a',
         color: 'white'
       }
     },
