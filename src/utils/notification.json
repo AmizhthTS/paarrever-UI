@@ -338,5 +338,9 @@
   "1066": {
     "data": "Too many failed attempts. Please try again later.",
     "type": "info"
+  },
+  "2100": {
+    "data": "Review submitted successfully!",
+    "type": "success"
   }
 }
