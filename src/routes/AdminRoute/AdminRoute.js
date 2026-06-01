@@ -5,7 +5,8 @@ import {
   AdminCategoryList,
   AdminContactList,
   AdminStoreList,
-  AdminSubCategoryList
+  AdminSubCategoryList,
+  AdminReviewList
 } from '../../sections';
 
 const AdminRoute = () => {
@@ -23,6 +24,7 @@ const AdminRoute = () => {
         />
         <Route path="/admin/store/list" element={<AdminStoreList />} />
         <Route path="/admin/enquiries/list" element={<AdminContactList />} />
+        <Route path="/admin/review/list" element={<AdminReviewList />} />
       </Route>
     </Route>
   );

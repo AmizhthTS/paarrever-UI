@@ -138,6 +138,13 @@ const AdminNavbar = () => {
               >
                 Enquiries
               </MenuItem>
+              <MenuItem
+                component={NavLink}
+                to="/admin/review/list"
+                onClick={handleCloseNavMenu}
+              >
+                Reviews
+              </MenuItem>
               <Divider />
               <MenuItem onClick={logoutBtn}>
                 <ListItemIcon>
@@ -193,6 +200,17 @@ const AdminNavbar = () => {
                 to="/admin/enquiries/list"
               >
                 Enquiries
+              </NavLink>
+            </Button>
+            <Button sx={styles.menuBtn}>
+              <NavLink
+                style={({ isActive }) => ({
+                  ...styles.linkBtn,
+                  ...(isActive ? styles.linkBtnActive : {})
+                })}
+                to="/admin/review/list"
+              >
+                Reviews
               </NavLink>
             </Button>
             <Typography sx={styles.username}>{userName}</Typography>

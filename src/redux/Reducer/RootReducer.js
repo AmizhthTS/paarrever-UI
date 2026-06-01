@@ -8,6 +8,7 @@ import Category from './Category/Category';
 import Newsletter from './Newsletter/Newsletter';
 import Contact from './Contact/Contact';
 import Store from './Store/Store';
+import Review from './Review/Review';
 const rootReducer = combineReducers({
   loader: Loader,
   notification: Notification,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   category: Category,
   newsletter: Newsletter,
   contact: Contact,
-  store: Store
+  store: Store,
+  review: Review
 });
 export default rootReducer;

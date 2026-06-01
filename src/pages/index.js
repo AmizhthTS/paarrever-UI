@@ -13,6 +13,7 @@ import StorePage from './StorePage';
 import ProductDetailPage from './ProductDetailPage';
 import PaarPassportPage from './PaarPassportPage';
 import AdminLayout from './AdminLayout';
+import ReviewPage from './ReviewPage';
 export {
   PageNotFound,
   UnderMaintenance,
@@ -28,5 +29,6 @@ export {
   StorePage,
   ProductDetailPage,
   AdminLayout,
-  PaarPassportPage
+  PaarPassportPage,
+  ReviewPage
 };

@@ -1,53 +1,31 @@
 import {
   FormHelperText,
-  MenuItem,
-  Select,
-  //   TextField,
-  Typography
+  Typography,
+  Autocomplete,
+  TextField
 } from '@mui/material';
 import getStyles from './styles';
 import { Controller } from 'react-hook-form';
 
 const SelectInput = ({
-  //   control,
-  //   errors,
-  //   type,
-  //   name,
-  //   validate,
-  //   onKeyDownData,
-  //   textLable,
-  //   placeholderName,
-  //   requiredMsg,
-  //   inputProps,
-  //   onInput,
-  //   style,
-  //   multiline,
-  //   rows
   control,
   errors,
   name,
-  renderValue,
   requiredMsg,
   onChange,
   style,
-  displayEmpty,
-  mapValues,
+  options = [],
   size,
   validate,
   label,
   labelStyle,
   labelMandatory,
-  variant
+  variant,
+  textLable,
+  placeholderName
 }) => {
-  // const { text = 'Welcome' } = props; // props destructuring
-  // redux state define
-  // component state definetion
-  // dispatch defination
-  // route defination
-  // style imports
-  // useEffect desfine
-  // handlers funtion
   const { lableCss = {}, textDanger = {} } = getStyles();
+
   return (
     <>
       {label && (
@@ -64,40 +42,50 @@ const SelectInput = ({
           validate: validate
         }}
         render={({ field }) => (
-          // <TextField
-          //   {...field}
-          //   fullWidth
-          //   id={name}
-          //   type={type}
-          //   label={textLable}
-          //   placeholder={placeholderName}
-          //   error={!!errors[name]}
-          //   onKeyDown={onKeyDownData && ((e) => onKeyDownData(e))}
-          //   helperText={errors[name] ? errors[name].message : ''}
-          //   inputProps={inputProps}
-          //   onInput={onInput && onInput}
-          //   sx={style}
-          //   size={size}
-          //   multiline={multiline}
-          //   rows={rows}
-          // />
-          <Select
+          <Autocomplete
             {...field}
+            options={options || []}
+            getOptionLabel={(option) => {
+              if (typeof option === 'string') return option;
+              return option?.label || '';
+            }}
+            isOptionEqualToValue={(option, value) => {
+              const optionValue =
+                typeof option === 'string' ? option : option.value;
+              const selectedValue =
+                typeof value === 'string' ? value : value.value;
+              return optionValue === selectedValue;
+            }}
+            onChange={(_, newValue) => {
+              const selectedVal = newValue
+                ? typeof newValue === 'string'
+                  ? newValue
+                  : newValue.value
+                : '';
+              field.onChange(selectedVal);
+              if (onChange) {
+                onChange(selectedVal);
+              }
+            }}
+            value={
+              (options || []).find((opt) => {
+                const optVal = typeof opt === 'string' ? opt : opt.value;
+                return optVal === field.value;
+              }) || null
+            }
             fullWidth
-            onChange={onChange}
-            sx={style}
-            displayEmpty={displayEmpty}
-            renderValue={renderValue}
-            error={!!errors[name]}
             size={size}
-          >
-            {mapValues &&
-              mapValues.map((list, index) => (
-                <MenuItem value={list.value} key={index}>
-                  {list.name}
-                </MenuItem>
-              ))}
-          </Select>
+            sx={style}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label={textLable}
+                placeholder={placeholderName}
+                error={!!errors[name]}
+                variant="outlined"
+              />
+            )}
+          />
         )}
       />
       <FormHelperText sx={textDanger}>
