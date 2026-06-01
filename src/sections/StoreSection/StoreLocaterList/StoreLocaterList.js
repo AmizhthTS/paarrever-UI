@@ -192,7 +192,7 @@ const StoreLocaterList = () => {
                           fullWidth
                           startIcon={<WhatsAppIcon />}
                           onClick={() =>
-                            handleWhatsAppClick(store.contactNumber)
+                            handleWhatsAppClick(store.whatsappNumber)
                           }
                         >
                           Message us

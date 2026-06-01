@@ -272,6 +272,25 @@ const AdminStoreAdd = ({
                   />
                 </Box>
               </Grid>
+
+              <Grid item lg={6} md={6} sm={12} xs={12}>
+                <Box sx={styles.inputBackground}>
+                  <TextInput
+                    control={control}
+                    errors={errors}
+                    name="whatsappNumber"
+                    type="text"
+                    textLable="Whatsapp Number *"
+                    placeholderName="Enter your Whatsapp Number"
+                    variant="outlined"
+                    requiredMsg="Whatsapp Number is required"
+                    validate={{
+                      validateNewPhoneNumber
+                    }}
+                  />
+                </Box>
+              </Grid>
+
               <Grid item lg={6} md={6} sm={12} xs={12}>
                 <Box sx={styles.inputBackground}>
                   <TextInput

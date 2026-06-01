@@ -245,6 +245,9 @@ const AdminStoreList = () => {
                           Contact Number
                         </TableCell>
                         <TableCell align="center" sx={{ fontWeight: 'bold' }}>
+                          Whatsapp Number
+                        </TableCell>
+                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>
                           Actions
                         </TableCell>
                       </TableRow>
@@ -294,6 +297,14 @@ const AdminStoreList = () => {
                                 sx={{ padding: '12px' }}
                               >
                                 {list.contactNumber ? list.contactNumber : '-'}
+                              </TableCell>
+                              <TableCell
+                                align="center"
+                                sx={{ padding: '12px' }}
+                              >
+                                {list.whatsappNumber
+                                  ? list.whatsappNumber
+                                  : '-'}
                               </TableCell>
                               <TableCell align="center">
                                 <Box
