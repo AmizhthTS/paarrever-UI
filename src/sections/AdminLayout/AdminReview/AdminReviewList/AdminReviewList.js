@@ -20,7 +20,7 @@ import {
   TableRow,
   Tooltip,
   Typography,
-  Rating,
+  // Rating,
   CardMedia,
   Autocomplete,
   TextField,
@@ -386,7 +386,7 @@ const AdminReviewList = () => {
             <Grid item xs={8}>
               <Typography>{selected?.branchName || '-'}</Typography>
             </Grid>
-            <Grid item xs={4}>
+            {/* <Grid item xs={4}>
               <Typography sx={{ fontWeight: 'bold' }}>Bought Items:</Typography>
             </Grid>
             <Grid item xs={8}>
@@ -395,9 +395,9 @@ const AdminReviewList = () => {
                   ? selected.boughtItems.join(', ')
                   : '-'}
               </Typography>
-            </Grid>
+            </Grid> */}
 
-            <Grid item xs={12} sx={{ mt: 2 }}>
+            {/* <Grid item xs={12} sx={{ mt: 2 }}>
               <Typography sx={{ fontWeight: 'bold', mb: 1 }}>
                 Ratings:
               </Typography>
@@ -435,7 +435,7 @@ const AdminReviewList = () => {
                   />
                 </Grid>
               </Grid>
-            </Grid>
+            </Grid> */}
 
             <Grid item xs={12}>
               <Typography sx={{ fontWeight: 'bold', mt: 1 }}>
