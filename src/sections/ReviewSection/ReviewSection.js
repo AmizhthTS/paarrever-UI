@@ -12,7 +12,9 @@ import { isWhitespace, validateEmail, validateNumberonly } from '../../utils';
 import { getReviewSave } from '../../redux/Reducer/Review/Review';
 import { setNotification } from '../../redux/Reducer/Notification/Notification';
 import { isEmptyObject } from '../../utils/helper';
-import { getStoreList } from '../../redux/Reducer/Store/Store';
+import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
+import AttachFileIcon from '@mui/icons-material/AttachFile';
+// import { getStoreList } from '../../redux/Reducer/Store/Store';
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 
@@ -25,8 +27,8 @@ const ReviewSection = () => {
   const [imageName, setImageName] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const storeData = useSelector((state) => state?.store ?? null);
-  const storeListResponse = storeData?.storeList ?? null;
+  // const storeData = useSelector((state) => state?.store ?? null);
+  // const storeListResponse = storeData?.storeList ?? null;
   const reviewData = useSelector((s) => s?.review ?? null);
   const reviewSaveResponse = reviewData?.reviewSave ?? null;
 
@@ -37,31 +39,38 @@ const ReviewSection = () => {
     formState: { errors }
   } = useForm();
 
-  const [branches, setBranches] = useState([]);
+  const [branches] = useState([
+    'Product Availability',
+    'Staff Service',
+    'Billing Time',
+    'Value for Money',
+    'Store Experience',
+    'Others                                 '
+  ]);
 
-  useEffect(() => {
-    if (storeListResponse) {
-      if (storeListResponse?.stores) {
-        let branchArr = storeListResponse?.stores.map((item) => {
-          return { value: item.storeName, label: item.storeName };
-        });
-        setBranches(branchArr);
-      }
-    } else {
-      setBranches([]);
-    }
-  }, [storeListResponse]);
+  // useEffect(() => {
+  //   if (storeListResponse) {
+  //     if (storeListResponse?.stores) {
+  //       let branchArr = storeListResponse?.stores.map((item) => {
+  //         return { value: item.storeName, label: item.storeName };
+  //       });
+  //       setBranches(branchArr);
+  //     }
+  //   } else {
+  //     setBranches([]);
+  //   }
+  // }, [storeListResponse]);
 
   useEffect(() => {
     Aos.init();
     Aos.refresh();
-    dispatch(
-      getStoreList({
-        listSize: 1000,
-        pageNumber: 1,
-        searchString: ''
-      })
-    );
+    // dispatch(
+    //   getStoreList({
+    //     listSize: 1000,
+    //     pageNumber: 1,
+    //     searchString: ''
+    //   })
+    // );
   }, []);
 
   useEffect(() => {
@@ -295,65 +304,116 @@ const ReviewSection = () => {
 
                   <Grid item xs={12}>
                     <motion.div variants={itemVariants}>
-                      <Button
-                        variant="outlined"
-                        component="label"
-                        fullWidth
+                      <Box
                         sx={{
-                          textTransform: 'none',
-                          py: 2,
-                          borderRadius: '16px',
-                          border: '2px dashed #d0dae8',
-                          color: '#445',
-                          fontWeight: 600,
-                          fontSize: '1rem',
-                          gap: 1.5,
+                          mb: 1,
+                          display: 'flex',
+                          alignItems: 'center',
+                          color: '#546e7a',
+                          fontWeight: 500,
+                          fontSize: '0.9rem'
+                        }}
+                      >
+                        <AttachFileIcon
+                          sx={{
+                            fontSize: '1.2rem',
+                            mr: 0.5,
+                            transform: 'rotate(45deg)'
+                          }}
+                        />
+                        {t('review.attachment', 'Attachment (optional)')}
+                      </Box>
+                      <Box
+                        component="label"
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          py: 4,
+                          px: 2,
+                          borderRadius: '8px',
+                          border: '1px dashed #b0bec5',
+                          backgroundColor: '#fff',
+                          cursor: 'pointer',
                           transition: 'all 0.3s ease',
                           '&:hover': {
                             borderColor: '#ff4b2b',
-                            color: '#ff4b2b',
-                            background: 'rgba(255,75,43,0.04)',
-                            transform: 'scale(1.01)'
+                            backgroundColor: 'rgba(255,75,43,0.02)'
                           }
                         }}
                       >
-                        {imageName
-                          ? `📎 ${imageName}`
-                          : `📷 ${t('review.uploadPhoto')}`}
+                        <CloudUploadOutlinedIcon
+                          sx={{ fontSize: 48, color: '#90a4ae', mb: 1 }}
+                        />
+                        <Typography
+                          sx={{
+                            color: '#455a64',
+                            fontWeight: 500,
+                            mb: 1,
+                            fontSize: '1.1rem'
+                          }}
+                        >
+                          {imageName
+                            ? imageName
+                            : t(
+                                'review.addOrDrop',
+                                'Add file or drop file here'
+                              )}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            color: '#78909c',
+                            fontSize: '0.85rem',
+                            textAlign: 'center',
+                            mb: 1
+                          }}
+                        >
+                          {t(
+                            'review.supportedFormats',
+                            'Support: JPG, JPEG, PNG, SVG, CSV, XLSX, DOC, DOCX, XLS, PDF, TXT, ODT, EML, APK (Max 20MB)'
+                          )}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            color: '#f57c00',
+                            fontSize: '0.85rem',
+                            fontWeight: 500
+                          }}
+                        >
+                          {t(
+                            'review.onlyOneFile',
+                            'Note: Only one file allowed.'
+                          )}
+                        </Typography>
+
                         <input
                           type="file"
                           hidden
-                          accept="image/jpeg,image/png,image/jpg"
+                          accept=".jpg,.jpeg,.png,.svg,.csv,.xlsx,.doc,.docx,.xls,.pdf,.txt,.odt,.eml,.apk"
                           onChange={(e) => {
                             const f = e.target.files[0];
                             if (!f) return;
-                            if (
-                              ![
-                                'image/jpeg',
-                                'image/png',
-                                'image/jpg'
-                              ].includes(f.type)
-                            ) {
-                              alert(t('review.invalidImage'));
-                              return;
-                            }
-                            if (f.size > 1024 * 1024 * 5) {
-                              alert(t('review.imageTooLarge'));
+
+                            if (f.size > 1024 * 1024 * 20) {
+                              alert(
+                                t(
+                                  'review.imageTooLarge',
+                                  'File is too large. Max allowed size is 20MB.'
+                                )
+                              );
                               return;
                             }
                             setImageName(f.name);
                             const r = new FileReader();
                             r.onloadend = () =>
                               setImageBase64(
-                                r.result.replace(
-                                  /^data:image\/(png|jpeg|jpg);base64,/,
-                                  ''
-                                )
+                                r.result.replace(/^data:.*?;base64,/, '')
                               );
                             r.readAsDataURL(f);
                           }}
                         />
-                      </Button>
+                      </Box>
                     </motion.div>
                   </Grid>
 
