@@ -247,16 +247,15 @@ const AdminReviewList = () => {
                         <TableCell align="center" sx={{ fontWeight: 'bold' }}>
                           #
                         </TableCell>
-                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>
-                          Name
-                        </TableCell>
-                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>
-                          Email
-                        </TableCell>
-                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>
+                        <TableCell sx={{ fontWeight: 'bold' }}>Name</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>Email</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>
                           Branch
                         </TableCell>
-                        <TableCell align="center" sx={{ fontWeight: 'bold' }}>
+                        <TableCell sx={{ fontWeight: 'bold' }}>
+                          Feedback Type
+                        </TableCell>
+                        <TableCell sx={{ fontWeight: 'bold' }}>
                           Feedback
                         </TableCell>
                         <TableCell align="center" sx={{ fontWeight: 'bold' }}>
@@ -281,16 +280,19 @@ const AdminReviewList = () => {
                           <TableCell align="center" sx={{ padding: '12px' }}>
                             {page * rowsPerPage + index + 1}
                           </TableCell>
-                          <TableCell align="center" sx={{ padding: '12px' }}>
+                          <TableCell sx={{ padding: '12px' }}>
                             {list.firstName || ''} {list.lastName || ''}
                           </TableCell>
-                          <TableCell align="center" sx={{ padding: '12px' }}>
+                          <TableCell sx={{ padding: '12px' }}>
                             {list.email || '-'}
                           </TableCell>
-                          <TableCell align="center" sx={{ padding: '12px' }}>
+                          <TableCell sx={{ padding: '12px' }}>
                             {list.branchName || '-'}
                           </TableCell>
-                          <TableCell align="center" sx={{ padding: '12px' }}>
+                          <TableCell sx={{ padding: '12px' }}>
+                            {list.feedbackType || '-'}
+                          </TableCell>
+                          <TableCell sx={{ padding: '12px' }}>
                             {list.feedbackMessage ? (
                               list.feedbackMessage.length > 50 ? (
                                 <>{list.feedbackMessage.slice(0, 50)}...</>
@@ -355,7 +357,7 @@ const AdminReviewList = () => {
               marginBottom: '10px'
             }}
           >
-            Review Details
+            Feedback Details
           </Typography>
         </DialogTitle>
         <DialogContent>
@@ -386,6 +388,15 @@ const AdminReviewList = () => {
             <Grid item xs={8}>
               <Typography>{selected?.branchName || '-'}</Typography>
             </Grid>
+            <Grid item xs={4}>
+              <Typography sx={{ fontWeight: 'bold' }}>
+                Feedback Type:
+              </Typography>
+            </Grid>
+            <Grid item xs={8}>
+              <Typography>{selected?.feedbackType || '-'}</Typography>
+            </Grid>
+
             {/* <Grid item xs={4}>
               <Typography sx={{ fontWeight: 'bold' }}>Bought Items:</Typography>
             </Grid>

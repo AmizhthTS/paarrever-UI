@@ -14,7 +14,11 @@ import { setNotification } from '../../redux/Reducer/Notification/Notification';
 import { isEmptyObject } from '../../utils/helper';
 import CloudUploadOutlinedIcon from '@mui/icons-material/CloudUploadOutlined';
 import AttachFileIcon from '@mui/icons-material/AttachFile';
-// import { getStoreList } from '../../redux/Reducer/Store/Store';
+import { Autocomplete, TextField, Card, CardContent } from '@mui/material';
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import { getStoreList } from '../../redux/Reducer/Store/Store';
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 
@@ -27,10 +31,13 @@ const ReviewSection = () => {
   const [imageName, setImageName] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // const storeData = useSelector((state) => state?.store ?? null);
-  // const storeListResponse = storeData?.storeList ?? null;
+  const storeData = useSelector((state) => state?.store ?? null);
+  const storeListResponse = storeData?.storeList ?? null;
   const reviewData = useSelector((s) => s?.review ?? null);
   const reviewSaveResponse = reviewData?.reviewSave ?? null;
+
+  const [stores, setStores] = useState([]);
+  const [selectedStore, setSelectedStore] = useState(null);
 
   const {
     handleSubmit,
@@ -48,29 +55,25 @@ const ReviewSection = () => {
     'Others                                 '
   ]);
 
-  // useEffect(() => {
-  //   if (storeListResponse) {
-  //     if (storeListResponse?.stores) {
-  //       let branchArr = storeListResponse?.stores.map((item) => {
-  //         return { value: item.storeName, label: item.storeName };
-  //       });
-  //       setBranches(branchArr);
-  //     }
-  //   } else {
-  //     setBranches([]);
-  //   }
-  // }, [storeListResponse]);
+  useEffect(() => {
+    if (storeListResponse && storeListResponse.stores) {
+      setStores(storeListResponse.stores);
+      if (storeListResponse.stores.length > 0 && !selectedStore) {
+        setSelectedStore(storeListResponse.stores[0]);
+      }
+    }
+  }, [storeListResponse]);
 
   useEffect(() => {
     Aos.init();
     Aos.refresh();
-    // dispatch(
-    //   getStoreList({
-    //     listSize: 1000,
-    //     pageNumber: 1,
-    //     searchString: ''
-    //   })
-    // );
+    dispatch(
+      getStoreList({
+        listSize: 1000,
+        pageNumber: 1,
+        searchString: ''
+      })
+    );
   }, []);
 
   useEffect(() => {
@@ -105,6 +108,10 @@ const ReviewSection = () => {
   }, [reviewSaveResponse]);
 
   const onSubmit = (data) => {
+    // debugger;
+
+    data.branchName = selectedStore?.storeName;
+    console.log('selectedStore', data);
     dispatch(
       getReviewSave({
         ...data,
@@ -134,21 +141,194 @@ const ReviewSection = () => {
   return (
     <Box sx={styles.page}>
       <Box sx={styles.blob1} /> <Box sx={styles.blob2} />
-      <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 2 }}>
-        {/* ── Hero ── */}
+      <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>
+        {/* ── Help Section ── */}
         <Box
-          textAlign="center"
           mb={6}
           data-aos="fade-down"
           data-aos-duration="900"
+          sx={{
+            backgroundColor: '#f8faff',
+            borderRadius: '16px',
+            p: { xs: 3, md: 5 },
+            border: '1px solid #eef2f6'
+          }}
         >
-          <Box sx={styles.heroLabel}>{t('review.heroLabel')}</Box>
-          <Typography sx={styles.heroTitle}>
-            {t('review.heroTitle1')}
-            <br />
-            {t('review.heroTitle2')}
-          </Typography>
-          <Typography sx={styles.heroSub}>{t('review.heroSub')}</Typography>
+          <Box textAlign="center" mb={4}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: 700,
+                color: '#1a202c',
+                mb: 1,
+                fontSize: { xs: '1.75rem', md: '2rem' }
+              }}
+            >
+              {t('review.helpTitle')}
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{ color: '#64748b', fontSize: '1.1rem' }}
+            >
+              {t('review.helpSubtitle')}
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              backgroundColor: '#fff',
+              p: 2,
+              borderRadius: '8px',
+              border: '1px solid #e2e8f0',
+              mb: 4,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 1
+            }}
+          >
+            <Typography sx={{ fontWeight: 600, color: '#475569' }}>
+              {t('review.storeLabel')}
+            </Typography>
+
+            <Autocomplete
+              options={stores}
+              getOptionLabel={(option) => option.storeName || ''}
+              value={selectedStore}
+              onChange={(e, newValue) => setSelectedStore(newValue)}
+              disableClearable
+              sx={{ width: { xs: '100%', sm: 350 } }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  variant="standard"
+                  InputProps={{
+                    ...params.InputProps,
+                    // disableUnderline: true,
+                    sx: { color: '#3b82f6', fontWeight: 500, paddingLeft: 1 }
+                  }}
+                />
+              )}
+            />
+          </Box>
+
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6}>
+              <Card
+                sx={{
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                  border: '1px solid #eef2f6',
+                  height: '100%'
+                }}
+              >
+                <CardContent
+                  sx={{
+                    p: 3,
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: 2
+                  }}
+                >
+                  <Box
+                    sx={{
+                      backgroundColor: '#e6f4ea',
+                      p: 1.5,
+                      borderRadius: '50%',
+                      display: 'flex'
+                    }}
+                  >
+                    <LocalPhoneOutlinedIcon sx={{ color: '#1e8e3e' }} />
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        color: '#1a202c',
+                        mb: 1,
+                        fontSize: '1.1rem'
+                      }}
+                    >
+                      {t('review.callUs')}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: '#1e8e3e',
+                        fontWeight: 700,
+                        fontSize: '1.5rem',
+                        mb: 1
+                      }}
+                    >
+                      {selectedStore
+                        ? selectedStore.contactNumber
+                        : t('review.notAvailable')}
+                    </Typography>
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        color: '#64748b',
+                        gap: 0.5
+                      }}
+                    >
+                      <AccessTimeIcon sx={{ fontSize: '1rem' }} />
+                      <Typography variant="body2">
+                        {t('review.timing')}{' '}
+                        {selectedStore
+                          ? selectedStore.time
+                          : t('review.notAvailable')}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Card
+                sx={{
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+                  border: '1px solid #eef2f6',
+                  height: '100%'
+                }}
+              >
+                <CardContent
+                  sx={{
+                    p: 3,
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: 2
+                  }}
+                >
+                  <Box
+                    sx={{
+                      backgroundColor: '#e8f0fe',
+                      p: 1.5,
+                      borderRadius: '50%',
+                      display: 'flex'
+                    }}
+                  >
+                    <EmailOutlinedIcon sx={{ color: '#1a73e8' }} />
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        color: '#1a202c',
+                        mb: 1,
+                        fontSize: '1.1rem'
+                      }}
+                    >
+                      {t('review.writeToUs')}
+                    </Typography>
+                    <Typography sx={{ color: '#475569', lineHeight: 1.6 }}>
+                      {t('review.writeToUsDesc')}
+                    </Typography>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          </Grid>
         </Box>
 
         {/* ── Form Card ── */}
@@ -176,7 +356,11 @@ const ReviewSection = () => {
                   )}
                 </Typography>
                 <Button
-                  onClick={() => setIsSubmitted(false)}
+                  onClick={() => {
+                    setIsSubmitted(false);
+                    reset();
+                    setSelectedStore(storeListResponse.stores[0]);
+                  }}
                   sx={{ ...styles.btnSubmit, width: 'auto', px: 4, mt: 0 }}
                 >
                   {t('review.submitAnother', 'Submit Another Review')}
@@ -201,7 +385,7 @@ const ReviewSection = () => {
                         errors={errors}
                         name="firstName"
                         type="text"
-                        textLable={t('review.name', 'Name')}
+                        textLable={t('review.firstName')}
                         placeholderName={t('review.firstNamePlaceholder')}
                         variant="outlined"
                         requiredMsg={t('review.firstNameRequired')}
@@ -221,7 +405,7 @@ const ReviewSection = () => {
                         name="phoneNumber"
                         type="text"
                         textLable={t('review.phoneNumber')}
-                        placeholderName="+91 XXXXX XXXXX"
+                        placeholderName={t('review.phoneNumberPlaceholder')}
                         variant="outlined"
                         requiredMsg={t('review.phoneNumberRequired')}
                         onKeyDownData={validateNumberonly}
@@ -268,7 +452,7 @@ const ReviewSection = () => {
                       <SelectInput
                         control={control}
                         errors={errors}
-                        name="branchName"
+                        name="feedbackType"
                         textLable={t('review.whichBranch')}
                         options={branches}
                         requiredMsg={t('review.selectBranch')}
@@ -321,7 +505,7 @@ const ReviewSection = () => {
                             transform: 'rotate(45deg)'
                           }}
                         />
-                        {t('review.attachment', 'Attachment (optional)')}
+                        {t('review.uploadPhoto')}
                       </Box>
                       <Box
                         component="label"
@@ -370,7 +554,7 @@ const ReviewSection = () => {
                           }}
                         >
                           {t(
-                            'review.supportedFormats',
+                            'review.invalidImage',
                             'Support: JPG, JPEG, PNG, SVG, CSV, XLSX, DOC, DOCX, XLS, PDF, TXT, ODT, EML, APK (Max 20MB)'
                           )}
                         </Typography>
