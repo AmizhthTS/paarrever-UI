@@ -19,10 +19,12 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import { getStoreList } from '../../redux/Reducer/Store/Store';
+import { useParams } from 'react-router-dom';
 
 // ─── COMPONENT ───────────────────────────────────────────────────────────────
 
 const ReviewSection = () => {
+  const { storeName, contactNumber, time } = useParams();
   const styles = getStyles();
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -54,7 +56,7 @@ const ReviewSection = () => {
     'Store Experience',
     'Others                                 '
   ]);
-
+  const [showStoreInfo, setShowStoreInfo] = useState(false);
   useEffect(() => {
     if (storeListResponse && storeListResponse.stores) {
       setStores(storeListResponse.stores);
@@ -67,14 +69,24 @@ const ReviewSection = () => {
   useEffect(() => {
     Aos.init();
     Aos.refresh();
-    dispatch(
-      getStoreList({
-        listSize: 1000,
-        pageNumber: 1,
-        searchString: ''
-      })
-    );
-  }, []);
+    if (storeName && contactNumber && time) {
+      setSelectedStore({
+        storeName,
+        contactNumber,
+        time
+      });
+      setShowStoreInfo(false);
+    } else {
+      dispatch(
+        getStoreList({
+          listSize: 1000,
+          pageNumber: 1,
+          searchString: ''
+        })
+      );
+      setShowStoreInfo(true);
+    }
+  }, [storeName, contactNumber, time]);
 
   useEffect(() => {
     if (!isEmptyObject(reviewSaveResponse)) {
@@ -190,26 +202,31 @@ const ReviewSection = () => {
             <Typography sx={{ fontWeight: 600, color: '#475569' }}>
               {t('review.storeLabel')}
             </Typography>
-
-            <Autocomplete
-              options={stores}
-              getOptionLabel={(option) => option.storeName || ''}
-              value={selectedStore}
-              onChange={(e, newValue) => setSelectedStore(newValue)}
-              disableClearable
-              sx={{ width: { xs: '100%', sm: 350 } }}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  variant="standard"
-                  InputProps={{
-                    ...params.InputProps,
-                    // disableUnderline: true,
-                    sx: { color: '#3b82f6', fontWeight: 500, paddingLeft: 1 }
-                  }}
-                />
-              )}
-            />
+            {showStoreInfo ? (
+              <Autocomplete
+                options={stores}
+                getOptionLabel={(option) => option.storeName || ''}
+                value={selectedStore}
+                onChange={(e, newValue) => setSelectedStore(newValue)}
+                disableClearable
+                sx={{ width: { xs: '100%', sm: 350 } }}
+                renderInput={(params) => (
+                  <TextField
+                    {...params}
+                    variant="standard"
+                    InputProps={{
+                      ...params.InputProps,
+                      // disableUnderline: true,
+                      sx: { color: '#3b82f6', fontWeight: 500, paddingLeft: 1 }
+                    }}
+                  />
+                )}
+              />
+            ) : (
+              <Typography sx={{ fontWeight: 600, color: '#3b82f6' }}>
+                {selectedStore?.storeName}
+              </Typography>
+            )}
           </Box>
 
           <Grid container spacing={3}>

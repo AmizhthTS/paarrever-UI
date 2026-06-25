@@ -45,6 +45,10 @@ const RouteConfig = () => {
           <Route path="under-maintenance" element={<UnderMaintenance />} />
           <Route path="sesstion-timeout" element={<SesstionTimeout />} />
           <Route path="reviews" element={<ReviewPage />} />
+          <Route
+            path="reviews/:storeName/:contactNumber/:time"
+            element={<ReviewPage />}
+          />
         </Route>
       </Routes>
     </>
