@@ -12,7 +12,8 @@ import {
   SesstionTimeout,
   StorePage,
   UnderMaintenance,
-  UnSusbcribe
+  UnSusbcribe,
+  ReviewPage
 } from '../pages';
 import AuthRoute from './AuthRoute';
 import AdminRoute from './AdminRoute';
@@ -43,6 +44,11 @@ const RouteConfig = () => {
           <Route path="404" element={<PageNotFound />} />
           <Route path="under-maintenance" element={<UnderMaintenance />} />
           <Route path="sesstion-timeout" element={<SesstionTimeout />} />
+          <Route path="reviews" element={<ReviewPage />} />
+          <Route
+            path="reviews/:storeName/:contactNumber/:time"
+            element={<ReviewPage />}
+          />
         </Route>
       </Routes>
     </>

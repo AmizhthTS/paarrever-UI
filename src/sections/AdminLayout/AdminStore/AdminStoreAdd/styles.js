@@ -9,8 +9,8 @@ const getStyles = () => {
     inputBackground: {
       boxShadow: '0px 0px 25px #dcdcdc59',
       padding: '15px 20px',
-      borderRadius: '10px',
-      marginBottom: '40px'
+      borderRadius: '10px'
+      // marginBottom: '20px'
     },
     categoryTitle: {
       fontSize: '24px',

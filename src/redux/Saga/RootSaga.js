@@ -14,6 +14,7 @@ import {
 } from './Category';
 import { watchNewsletterSubscribtionSaveSaga } from './NewsLetter';
 import { watchContactListSaga, watchContactSaveSaga } from './Contact';
+import { watchReviewSaga } from './Review/Review';
 import {
   watchStoreGetSaga,
   watchStoreListSaga,
@@ -44,7 +45,8 @@ export function* watcherSaga() {
     watchSubCategoryListSaga(),
     watchSubCategorySaveSaga(),
     watchSubCategoryRemoveSaga(),
-    watchSubCategoryGetSaga()
-    // Additional sagas go here
+    watchSubCategoryGetSaga(),
+    // Additional sagas go here,
+    watchReviewSaga()
   ]);
 }

@@ -59,7 +59,8 @@ const Navbar = () => {
       href: '/store-locator'
     },
     { label: t('navbar.about'), href: '/about' },
-    { label: t('navbar.contact'), href: '/contact' }
+    { label: t('navbar.contact'), href: '/contact' },
+    { label: t('navbar.review'), href: '/reviews' }
   ];
 
   const handleHomeClick = () => {

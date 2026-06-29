@@ -17,6 +17,7 @@ import {
 import PaarclubSection from './PaarclubSection';
 import ProductDetailSection from './ProductDetailSection';
 import PaarPassportSection from './PaarPassportSection';
+import { ReviewSection } from './ReviewSection';
 import {
   StoreBanner,
   StoreNearby,
@@ -32,7 +33,8 @@ import {
   AdminStoreAdd,
   AdminContactList,
   AdminSubCategoryAdd,
-  AdminSubCategoryList
+  AdminSubCategoryList,
+  AdminReviewList
 } from './AdminLayout';
 export {
   Navbar,
@@ -65,5 +67,7 @@ export {
   AdminContactList,
   AdminSubCategoryAdd,
   AdminSubCategoryList,
-  PaarPassportSection
+  AdminReviewList,
+  PaarPassportSection,
+  ReviewSection
 };
